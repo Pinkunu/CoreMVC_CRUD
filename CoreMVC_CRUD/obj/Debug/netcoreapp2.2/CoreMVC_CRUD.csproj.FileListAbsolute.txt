@@ -8,7 +8,6 @@ E:\CoreMVC_CRUD\CoreMVC_CRUD\bin\Debug\netcoreapp2.2\CoreMVC_CRUD.dll
 E:\CoreMVC_CRUD\CoreMVC_CRUD\bin\Debug\netcoreapp2.2\CoreMVC_CRUD.pdb
 E:\CoreMVC_CRUD\CoreMVC_CRUD\bin\Debug\netcoreapp2.2\CoreMVC_CRUD.Views.dll
 E:\CoreMVC_CRUD\CoreMVC_CRUD\bin\Debug\netcoreapp2.2\CoreMVC_CRUD.Views.pdb
-E:\CoreMVC_CRUD\CoreMVC_CRUD\obj\Debug\netcoreapp2.2\CoreMVC_CRUD.csprojAssemblyReference.cache
 E:\CoreMVC_CRUD\CoreMVC_CRUD\obj\Debug\netcoreapp2.2\CoreMVC_CRUD.csproj.CoreCompileInputs.cache
 E:\CoreMVC_CRUD\CoreMVC_CRUD\obj\Debug\netcoreapp2.2\CoreMVC_CRUD.RazorAssemblyInfo.cache
 E:\CoreMVC_CRUD\CoreMVC_CRUD\obj\Debug\netcoreapp2.2\CoreMVC_CRUD.RazorAssemblyInfo.cs
