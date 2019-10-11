@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CoreMVC_CRUD.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace CoreMVC_CRUD.Controllers
 {
+    [EnableCors("AllowOrigin")]
     [Route("api")]
     [ApiController]
     public class EmployeesController : ControllerBase
@@ -43,7 +45,7 @@ namespace CoreMVC_CRUD.Controllers
         }
 
         // PUT: api/Employees/5
-        [HttpPut("{id}")]
+        [HttpPut("{UpdateEmployee}")]
         public async Task<IActionResult> PutEmployee(int id, Employee employee)
         {
             if (id != employee.EmployeeId)
@@ -80,11 +82,11 @@ namespace CoreMVC_CRUD.Controllers
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetEmployee", new { id = employee.EmployeeId }, employee);
+            return Ok("Success") ;
         }
 
         // DELETE: api/Employees/5
-        [HttpDelete("{id}")]
+        [HttpDelete("EmployeeDelete")]
         public async Task<ActionResult<Employee>> DeleteEmployee(int id)
         {
             var employee = await _context.Employees.FindAsync(id);

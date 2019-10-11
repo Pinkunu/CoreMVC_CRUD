@@ -30,3 +30,4 @@ E:\CoreMVC_CRUD\CoreMVC_CRUD\obj\Debug\netcoreapp2.2\CoreMVC_CRUD.Views.pdb
 E:\CoreMVC_CRUD\CoreMVC_CRUD\obj\Debug\netcoreapp2.2\CoreMVC_CRUD.dll
 E:\CoreMVC_CRUD\CoreMVC_CRUD\obj\Debug\netcoreapp2.2\CoreMVC_CRUD.pdb
 E:\CoreMVC_CRUD\CoreMVC_CRUD\obj\Debug\netcoreapp2.2\CoreMVC_CRUD.csproj.CopyComplete
+E:\CoreMVC_CRUD\CoreMVC_CRUD\obj\Debug\netcoreapp2.2\CoreMVC_CRUD.csprojAssemblyReference.cache

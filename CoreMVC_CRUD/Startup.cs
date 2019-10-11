@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
 
 namespace CoreMVC_CRUD
 {
@@ -32,7 +33,22 @@ namespace CoreMVC_CRUD
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowOrigin",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials()
+                    );
+            });
+            services.AddMvc(options =>
+            {
+                options.RespectBrowserAcceptHeader = true; // false by default
+            });
 
+            services.AddMvc()
+            .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<EmployeeContext>(options =>
             options.UseMySQL(Configuration.GetConnectionString("DevConnection")));
@@ -52,7 +68,7 @@ namespace CoreMVC_CRUD
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseCors("AllowOrigin");
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
