@@ -45,10 +45,10 @@ namespace CoreMVC_CRUD.Controllers
         }
 
         // PUT: api/Employees/5
-        [HttpPut("{UpdateEmployee}")]
-        public async Task<IActionResult> PutEmployee(int id, Employee employee)
+        [HttpPut("UpdateEmployee")]
+        public async Task<IActionResult> PutEmployee(Employee employee)
         {
-            if (id != employee.EmployeeId)
+            if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
@@ -58,17 +58,11 @@ namespace CoreMVC_CRUD.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+                return Ok("success");
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmployeeExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
             }
 
             return NoContent();
